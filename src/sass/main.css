@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
 .visually-hidden, .locations-title-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -83,7 +88,6 @@ a {
 }
 
 header {
-  position: relative;
   height: 62px;
   background: #ffb8ca;
 }
@@ -95,6 +99,7 @@ header .container {
 }
 
 .nav-main {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,7 +132,7 @@ header .container {
 .menu {
   position: absolute;
   top: 0;
-  right: -100%;
+  right: calc(-100% - 1px);
   width: 250px;
   height: 502px;
   background: #E17992;
@@ -135,15 +140,26 @@ header .container {
   font-weight: bold;
   font-size: 14px;
   line-height: 1.29;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
 }
 
 .menu.is-open {
-  right: 0;
+  right: -20px;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 300ms ease-out;
+  transition: -webkit-transform 300ms ease-out;
+  transition: transform 300ms ease-out;
+  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
 }
 
 .menu.is-open .close-menu {
   display: block;
-  background: #d41443;
 }
 
 .menu.is-open .open-menu {
@@ -152,10 +168,6 @@ header .container {
 
 .close-menu {
   display: none;
-}
-
-.open-menu {
-  background: #ffffff;
 }
 
 .menu-nav {
@@ -446,6 +458,12 @@ header .container {
         -ms-flex-align: center;
             align-items: center;
     margin-left: 14px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .eco-info {
+    margin-left: 57px;
   }
 }
 
@@ -926,197 +944,6 @@ header .container {
 .products-button {
   width: 40px;
   height: 40px;
-}
-
-.howitsmade {
-  padding-top: 125px;
-  padding-bottom: 39px;
-  background-color: #fff5f6;
-}
-
-.container-howitsmade {
-  width: auto;
-  display: block;
-}
-
-@media (min-width: 740px) {
-  .container-howitsmade {
-    padding-bottom: 66px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container-howitsmade {
-    padding-bottom: 146px;}
-
-.composition {
-  margin-bottom: 80px;
-  background-color: #fff5f6;
-}
-
-@media (min-width: 740px) {
-  .composition {
-    margin-bottom: 121px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .composition {
-    margin-bottom: 123px;
-  }
-}
-
-.composition-cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  /* background-color: $section-background; */
-}
-
-@media (min-width: 740px) {
-  .composition-cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    padding: 0 16px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .composition-cards {
-    padding: 0 95px;
-  }
-}
-
-.composition-unit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 230px;
-  margin-bottom: 38px;
-}
-
-@media (min-width: 740px) {
-  .composition-unit {
-    width: 180px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .composition-unit {
-    width: 330px;
-  }
-}
-
-@media (min-width: 740px) {
-  .composition-unit:not(:last-child) {
-    margin-right: 60px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .composition-unit:not(:last-child) {
-    margin-right: 30px;
-  }
-}
-
-.composition-unit:last-child {
-  margin-bottom: 97px;
-}
-
-.composition-unit .composition-icon {
-  display: block;
-  margin-bottom: 16px;
-}
-
-@media (min-width: 740px) {
-  .composition-unit .composition-icon {
-    margin-bottom: 36px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .composition-unit .composition-icon {
-    margin-bottom: 40px;
-  }
-}
-
-.composition-unit .composition-value {
-  font-family: 'Titan One', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 41px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #d41443;
-  margin-bottom: 10px;
-}
-
-@media (min-width: 740px) {
-  .composition-unit .composition-value {
-    font-size: 48px;
-    line-height: 55px;
-    margin-bottom: 13px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .composition-unit .composition-value {
-    font-size: 58px;
-    line-height: 66px;
-    margin-bottom: 15px;
-  }
-}
-
-.composition-unit .composition-text {
-  font-family: 'DM Sans', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 170%;
-  color: #000000;
-}
-
-@media (min-width: 740px) {
-  .composition-unit .composition-text {
-    font-size: 14px;
-    line-height: 174%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .composition-unit .composition-text {
-    font-size: 16px;
-    line-height: 176%;
-    letter-spacing: 0.02em;
-  }
-}
-
-.gallery-image {
-  display: inline-block;
-  margin: 0;
 }
 
 .howitsmade {
@@ -1716,21 +1543,18 @@ header .container {
 }
 
 .section-locations {
-  margin-top: 84px;
   padding-bottom: 29px;
   background-color: #fff5f6;
 }
 
 @media (min-width: 740px) {
   .section-locations {
-    margin-top: 78px;
     padding-bottom: 80px;
   }
 }
 
 @media (min-width: 1280px) {
   .section-locations {
-    margin-top: 102px;
     padding-bottom: 63px;
     background-image: url("../images/desktop_background_pink_1x.png");
     background-repeat: no-repeat;

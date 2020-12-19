@@ -3,7 +3,6 @@
     margin: 0;padding: 0;box-sizing: border-box;
 }
 header{
-    position: relative;
     height: 62px;
     background: /*$background-pink*/ #ffb8ca;
 }
@@ -13,6 +12,7 @@ header .container {
   width: 320px;
 }
 .nav-main {
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
@@ -38,7 +38,7 @@ header .container {
 .menu {
   position: absolute;
   top: 0;
-  right: -100%;
+  right: calc(-100% - 1px);
   width: 250px;
   height: 502px;
   background: /*$burger-background*/ #E17992;
@@ -47,25 +47,26 @@ header .container {
   font-weight: bold;
   font-size: 14px;
   line-height: 1.29;
+
+  transform: translateX(100%);
+  transition: transform 300ms ease-out;
 }
 .menu.is-open {
-    right: 0;
+  right: -20px;
+  transform: translateX(0);
+  transition: transform 300ms ease-out;
 
-    & .close-menu {
-        display: block;
-        background: #d41443;
-      }
-    & .open-menu {
-        display: none;
-
+& .close-menu {
+    display: block;
+    }
+& .open-menu {
+    display: none;
     }  
 }
 .close-menu {
     display: none;
-  }
-  .open-menu {
-    background: #ffffff;
 }
+
 .menu-nav {
   color: /*$white-color*/ #ffffff;
   display: block;
