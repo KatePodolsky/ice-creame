@@ -1,11 +1,11 @@
-*{
-    outline: 1px dotted red;
-    margin: 0;padding: 0;box-sizing: border-box;
+*{    margin: 0;padding: 0;box-sizing: border-box;
 }
 header{
+  position: absolute;
     height: 62px;
-    background: /*$background-pink*/ #ffb8ca;
-    overflow-x: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
 
     @media screen and (min-width: 740px) {
     height: 105px;    
@@ -43,12 +43,13 @@ header .container {
   width: 200px;
   height: 50px;
   margin: 6px 0;
-  background-image: url(./images/icons/logo.svg);
+  background-image: url(../images/icons/logo.svg);
   background-repeat: no-repeat;
   background-size: contain;
 
   @media screen and (min-width: 740px) {
     margin-top: 37px;
+    margin-right: 292px;
   }
 }
 .menu-btn {
@@ -63,19 +64,28 @@ header .container {
   outline: none;
 
   @media screen and (min-width: 740px) {
-  margin-right: 210px;
   margin-top: 40px;
   z-index: 8;
   }
+
+  @media screen and (min-width: 1250px){
+    display: none;
+  }
 }
+.nav-main + .menu-btn-tablet {
+  @media screen and (min-width: 740px){
+    display: none;
+  }
+}
+
 .menu {
   position: absolute;
   top: 0;
   right: calc(-100% - 1px);
   width: 250px;
   height: 502px;
-  background: /*$burger-background*/ #E17992;
-
+  background: $burger-background;
+display: none;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -83,6 +93,7 @@ header .container {
 
   transform: translateX(100%);
   transition: transform 300ms ease-out;
+  box-shadow: -10px 0px 11px -3px rgba(200, 10, 10, 0.1);
 
   z-index: 9;
 
@@ -90,11 +101,16 @@ header .container {
   width: 265px;
   height: 1020px;
   }
+
+  @media screen and (min-width: 1250px) {
+    box-shadow: none;
+  }
  }
 .menu.is-open {
   right: -20px;
   transform: translateX(0);
   transition: transform 300ms ease-out;
+display: block;
 
 & .close-menu {
     display: block;
@@ -106,20 +122,21 @@ header .container {
 
 .close-menu {
     display: none;
-    fill: /*$white-color*/ #ffffff;
+    fill: $white-color;
 }
 .open-menu {
-  fill: /*$button-primary-hover*/ #c7133e;
+  fill: $button-primary-hover;
 }  
 
 .menu-nav {
-  color: /*$white-color*/ #ffffff;
+  color: $white-color;
   display: block;
   padding: 12px 21px;
+  border: 1px solid #E18298;
 
   &:hover,
   &:focus {
-    color: /*$accent-color*/ #d41443;
+    color: $accent-color;
   }
 
   @media screen and (min-width: 1280px) {
@@ -132,9 +149,9 @@ header .container {
   height: 45px;
   border: none;
   border-radius: 22px;
-  margin: 60px auto 20px;
+  margin: 8px auto 20px;
 
-  background: /*$white-color*/ #ffffff;
+  background: $white-color;
 
   font-style: normal;
   font-weight: bold;
@@ -143,7 +160,7 @@ header .container {
   align-items: center;
   justify-content: center;
 
-  color: /*$accent-color*/ #d41443;
+  color: $accent-color;
 
   &::after{
     content: "";
@@ -151,13 +168,24 @@ header .container {
     width: 10px;
     height: 12px;
     margin-left: 20px;
-    background-image: url(./images/icons/vector.svg);
+    background-image: url(../images/icons/vector.svg);
     background-repeat: no-repeat;
     background-size: contain;
   }
   &:hover,
   &:focus {
-    background: /*$button-secondary-hover*/ #ECEBEB;
+    background: $button-secondary-hover;
+  }
+}
+.buy-now-main {
+  @media screen and (max-width: 739px) {
+    display:none;
+  }
+  @media screen and (min-width: 740px) {
+    margin: 38px 0 17px 17px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin: 38px 100px 38px 0;
   }
 }
 

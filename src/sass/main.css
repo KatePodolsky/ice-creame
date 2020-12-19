@@ -90,7 +90,6 @@ a {
 header {
   height: 62px;
   background: #ffb8ca;
-  overflow-x: hidden;
 }
 
 @media screen and (min-width: 740px) {
@@ -158,6 +157,7 @@ header .container {
 @media screen and (min-width: 740px) {
   .logo {
     margin-top: 37px;
+    margin-right: 292px;
   }
 }
 
@@ -175,9 +175,20 @@ header .container {
 
 @media screen and (min-width: 740px) {
   .menu-btn {
-    margin-right: 210px;
     margin-top: 40px;
     z-index: 8;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .nav-main + .menu-btn-tablet {
+    display: none;
   }
 }
 
@@ -198,6 +209,8 @@ header .container {
   transition: -webkit-transform 300ms ease-out;
   transition: transform 300ms ease-out;
   transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+  -webkit-box-shadow: -10px 0px 11px -3px rgba(200, 10, 10, 0.1);
+          box-shadow: -10px 0px 11px -3px rgba(200, 10, 10, 0.1);
   z-index: 9;
 }
 
@@ -205,6 +218,13 @@ header .container {
   .menu {
     width: 265px;
     height: 1020px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .menu {
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
@@ -239,6 +259,7 @@ header .container {
   color: #ffffff;
   display: block;
   padding: 12px 21px;
+  border: 1px solid #E18298;
 }
 
 .menu-nav:hover, .menu-nav:focus {
@@ -287,6 +308,24 @@ header .container {
 
 .buy-now-btn:hover, .buy-now-btn:focus {
   background: #ECEBEB;
+}
+
+@media screen and (max-width: 739px) {
+  .buy-now-main {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .buy-now-main {
+    margin: 38px 0 17px 17px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .buy-now-main {
+    margin: 38px 100px 38px 0;
+  }
 }
 
 .hero {
