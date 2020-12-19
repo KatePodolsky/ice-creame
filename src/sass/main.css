@@ -90,12 +90,37 @@ a {
 header {
   height: 62px;
   background: #ffb8ca;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 740px) {
+  header {
+    height: 105px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  header {
+    height: 125px;
+  }
 }
 
 header .container {
   margin: 0 auto;
   padding: 0 20px;
   width: 320px;
+}
+
+@media screen and (min-width: 740px) {
+  header .container {
+    width: 740px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  header .container {
+    width: 1250px;
+  }
 }
 
 .nav-main {
@@ -108,13 +133,32 @@ header .container {
           justify-content: space-between;
 }
 
+@media screen and (min-width: 740px) {
+  .nav-main {
+    height: 105px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .nav-main {
+    height: 125px;
+  }
+}
+
 .logo {
   display: inline-block;
   width: 200px;
   height: 50px;
+  margin: 6px 0;
   background-image: url(./images/icons/logo.svg);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@media screen and (min-width: 740px) {
+  .logo {
+    margin-top: 37px;
+  }
 }
 
 .menu-btn {
@@ -124,9 +168,17 @@ header .container {
   border: none;
   background: transparent;
   padding: 0;
-  margin: 0;
+  margin: 8px 0 0;
   z-index: 10;
   outline: none;
+}
+
+@media screen and (min-width: 740px) {
+  .menu-btn {
+    margin-right: 210px;
+    margin-top: 40px;
+    z-index: 8;
+  }
 }
 
 .menu {
@@ -146,6 +198,14 @@ header .container {
   transition: -webkit-transform 300ms ease-out;
   transition: transform 300ms ease-out;
   transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
+  z-index: 9;
+}
+
+@media screen and (min-width: 740px) {
+  .menu {
+    width: 265px;
+    height: 1020px;
+  }
 }
 
 .menu.is-open {
@@ -168,6 +228,11 @@ header .container {
 
 .close-menu {
   display: none;
+  fill: #ffffff;
+}
+
+.open-menu {
+  fill: #c7133e;
 }
 
 .menu-nav {
@@ -176,15 +241,25 @@ header .container {
   padding: 12px 21px;
 }
 
-.menu-nav:hover {
+.menu-nav:hover, .menu-nav:focus {
   color: #d41443;
 }
 
+@media screen and (min-width: 1280px) {
+  .menu-nav {
+    padding: 50px 0;
+  }
+}
+
 .buy-now-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 210px;
   height: 45px;
+  border: none;
   border-radius: 22px;
-  margin: 60px 20px 20px;
+  margin: 60px auto 20px;
   background: #ffffff;
   font-style: normal;
   font-weight: bold;
@@ -193,7 +268,25 @@ header .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #d41443;
+}
+
+.buy-now-btn::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 12px;
+  margin-left: 20px;
+  background-image: url(./images/icons/vector.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.buy-now-btn:hover, .buy-now-btn:focus {
+  background: #ECEBEB;
 }
 
 .hero {
