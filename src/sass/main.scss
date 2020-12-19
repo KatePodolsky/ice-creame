@@ -1,9 +1,9 @@
-<<<<<<< Updated upstream
+
 /*
  * Главный файл стилей.
  * Все паршалы подключаются сюда.
  */
-=======
+
 @import './utils/variables';
 @import './utils/functions';
 @import './utils/mixins';
@@ -24,7 +24,4 @@
 @import './layouts/section-locations';
 @import './layouts/locations-list';
 @import './layouts/section-footer';
->>>>>>> Stashed changes
 
-// Стили для файла с примером HTML-фрагмента
-@import './example';
