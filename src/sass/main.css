@@ -825,6 +825,12 @@ a {
   background-color: #fff5f6;
 }
 
+@media (min-width: 740px) {
+  .howitsmade {
+    padding-top: 130px;
+  }
+}
+
 .container-howitsmade {
   width: auto;
   display: block;
@@ -839,7 +845,7 @@ a {
 
 @media (min-width: 1280px) {
   .container-howitsmade {
-    padding-bottom: 146px;
+    padding-bottom: 39px;
   }
 }
 
@@ -1081,6 +1087,13 @@ a {
     max-width: 220px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .howitamade-paragraph {
+    font-size: 14px;
+    line-height: 1.9285;
   }
 }
 

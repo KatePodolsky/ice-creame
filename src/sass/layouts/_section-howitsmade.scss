@@ -1,6 +1,10 @@
 .howitsmade {
   padding-top: 125px;
   background-color: $section-background;
+
+  @include for-size(tablet) {
+    padding-top: 130px;
+  }
 }
 
 .container-howitsmade {
@@ -13,7 +17,7 @@
   }
 
   @include for-size(desktop) {
-    padding-bottom: 146px;
+    padding-bottom: 39px;
   }
 }
 
@@ -219,5 +223,12 @@
     max-width: 220px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@include for-size(desktop) {
+  .howitamade-paragraph {
+    font-size: 14px;
+    line-height: 1.9285;
   }
 }
