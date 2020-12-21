@@ -55,7 +55,7 @@ header {
       right: -20px;
       animation: mmenuSlideIn 250ms;
     }
-    @include from-to(mobile, desktop) {
+    @include from-to(tablet, desktop) {
       right: -30px;
       animation: tmenuSlideIn 250ms;
     }
