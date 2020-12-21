@@ -36,12 +36,11 @@ header {
 
 .menu {
   z-index: 9;
-  visibility: hidden;
+
   position: absolute;
   top: 0;
   width: 250px;
-  min-height: 502px;
-  background: $burger-background;
+
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -60,6 +59,12 @@ header {
       right: -30px;
       animation: tmenuSlideIn 250ms;
     }
+  }
+
+  @include to(desktop) {
+    visibility: hidden;
+    min-height: 502px;
+    background: $burger-background;
   }
 
   @include to(tablet) {
