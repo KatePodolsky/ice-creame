@@ -117,63 +117,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"slider.js":[function(require,module,exports) {
+})({"js/mmenu.js":[function(require,module,exports) {
 (function () {
-  var refs = {
-    // adding parameters for the script
-    firstButton: document.querySelector('[first-button]'),
-    secondButton: document.querySelector('[second-button]'),
-    thirdButton: document.querySelector('[third-button]'),
-    firstReview: document.querySelector('[firts-review]'),
-    secondReview: document.querySelector('[second-review]'),
-    thirdReview: document.querySelector('[third-review]')
-  }; // actions when customer press the button
-
-  refs.firstButton.addEventListener('click', toggleModal_1);
-  refs.secondButton.addEventListener('click', toggleModal_2);
-  refs.thirdButton.addEventListener('click', toggleModal_3);
-
-  function toggleModal_1() {
-    // placing active status icon after button was pressed
-    refs.firstButton.classList.add('active');
-    refs.secondButton.classList.remove('active');
-    refs.thirdButton.classList.remove('active'); // placing slider windows in a right order
-
-    refs.firstReview.classList.remove('left');
-    refs.firstReview.classList.add('centered');
-    refs.secondReview.classList.remove('centered', 'left');
-    refs.secondReview.classList.add('right');
-    refs.thirdReview.classList.remove('centered');
-    refs.thirdReview.classList.add('right');
-  }
-
-  function toggleModal_2() {
-    // placing active status icon after button was pressed
-    refs.firstButton.classList.remove('active');
-    refs.secondButton.classList.add('active');
-    refs.thirdButton.classList.remove('active'); // placing slider windows in a right order
-
-    refs.firstReview.classList.remove('centered');
-    refs.firstReview.classList.add('left');
-    refs.secondReview.classList.remove('right', 'left');
-    refs.secondReview.classList.add('centered');
-    refs.thirdReview.classList.remove('centered');
-    refs.thirdReview.classList.add('right');
-  }
-
-  function toggleModal_3() {
-    // placing active status icon after button was pressed
-    refs.firstButton.classList.remove('active');
-    refs.secondButton.classList.remove('active');
-    refs.thirdButton.classList.add('active'); // placing slider windows in a right order
-
-    refs.firstReview.classList.remove('centered');
-    refs.firstReview.classList.add('left');
-    refs.secondReview.classList.remove('right', 'centered');
-    refs.secondReview.classList.add('left');
-    refs.thirdReview.classList.remove('right');
-    refs.thirdReview.classList.add('centered');
-  }
+  burgerBtn = document.querySelector('[data-mmenu-burger]');
+  mmenu = document.querySelector('[data-mmenu]');
+  burgerBtn.addEventListener('click', function () {
+    expanded = burgerBtn.getAttribute("aria-expanded") === "true" || false;
+    burgerBtn.setAttribute("aria-expanded", !expanded);
+    burgerBtn.classList.toggle('is-open');
+    mmenu.classList.toggle('is-hidden');
+  });
 })();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -203,7 +156,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55079" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50495" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -379,5 +332,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","slider.js"], null)
-//# sourceMappingURL=/slider.ab09d017.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/mmenu.js"], null)
+//# sourceMappingURL=/mmenu.46532ad1.js.map
